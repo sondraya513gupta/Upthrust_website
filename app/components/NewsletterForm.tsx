@@ -51,7 +51,7 @@ export function NewsletterForm() {
         throw new Error(data.message || "Failed to submit form.");
       }
 
-      // 1. Mandatory GTM DataLayer Push
+      // Mandatory GTM DataLayer Push
       if (typeof window !== "undefined") {
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
@@ -60,19 +60,6 @@ export function NewsletterForm() {
           email: email.trim().toLowerCase(),
           timestamp: new Date().toISOString(),
         });
-
-        // Informative DevTools Console Log for live interview demonstration
-        console.log(
-          "%c[GTM DataLayer]%c Event dispatched: 'form_submit'",
-          "background: #FF3800; color: #fff; padding: 2px 6px; font-weight: bold; border-radius: 3px;",
-          "color: #22C55E; font-weight: bold; font-size: 12px;",
-          {
-            event: "form_submit",
-            formId: "footer_newsletter_signup",
-            email: email.trim(),
-            timestamp: new Date().toISOString(),
-          }
-        );
       }
 
       setIsSuccess(true);
@@ -87,59 +74,64 @@ export function NewsletterForm() {
   };
 
   return (
-    <div className="w-full">
-      <h3 className="text-base sm:text-lg font-bold text-white mb-4">
+    <div className="w-full" suppressHydrationWarning>
+      <h3
+        className="text-[14px] sm:text-[15px] font-normal text-white mb-2.5"
+        suppressHydrationWarning
+      >
         {newsletter.heading}
       </h3>
 
       {isSuccess ? (
         <div
           role="status"
-          className="rounded-lg border border-emerald-500/30 bg-emerald-950/20 p-5 text-left transition-all"
+          className="rounded-sm border border-emerald-500/30 bg-emerald-950/20 p-4 text-left transition-all"
         >
-          <div className="flex items-center gap-2 text-emerald-400 font-bold text-sm mb-1">
+          <div className="flex items-center gap-2 text-emerald-400 font-medium text-xs mb-1">
             <span>✓</span>
             <span>Submission Successful!</span>
           </div>
-          <p className="text-xs text-neutral-300 leading-relaxed mb-3">
+          <p className="text-[11px] text-neutral-300 leading-relaxed mb-2">
             {newsletter.successMessage}
           </p>
-          <div className="flex items-center gap-3">
-            <button
-              onClick={() => setIsSuccess(false)}
-              className="text-xs font-mono text-[#FF3800] hover:underline"
-            >
-              Submit another response →
-            </button>
-            <a
-              href="/api/newsletter"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs font-mono text-neutral-400 hover:text-white underline"
-            >
-              View JSON record ↗
-            </a>
-          </div>
+          <button
+            onClick={() => setIsSuccess(false)}
+            className="text-[11px] font-mono text-[#FF4200] hover:underline"
+          >
+            Submit another response →
+          </button>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} noValidate className="space-y-4">
+        <form
+          onSubmit={handleSubmit}
+          noValidate
+          className="space-y-3.5"
+          suppressHydrationWarning
+        >
           {/* Consent Checkbox */}
-          <label className="flex items-start gap-2.5 cursor-pointer text-[11px] leading-relaxed text-neutral-400 select-none group">
+          <label
+            className="flex items-start gap-2.5 cursor-pointer text-[9.5px] sm:text-[10px] leading-snug text-neutral-400 select-none group"
+            suppressHydrationWarning
+          >
             <input
               type="checkbox"
               id="newsletter-consent"
               name="newsletterConsent"
               checked={consent}
               onChange={(e) => setConsent(e.target.checked)}
-              className="mt-0.5 h-3.5 w-3.5 rounded border-neutral-700 bg-neutral-900 text-[#FF3800] focus:ring-[#FF3800] focus:ring-offset-0 cursor-pointer accent-[#FF3800]"
+              className="mt-0.5 h-3.5 w-3.5 rounded-none border-neutral-600 bg-transparent text-[#FF4200] focus:ring-0 focus:outline-none cursor-pointer accent-[#FF4200]"
+              suppressHydrationWarning
             />
-            <span className="group-hover:text-neutral-300 transition-colors">
+            <span
+              className="group-hover:text-neutral-300 transition-colors"
+              suppressHydrationWarning
+            >
               {newsletter.consentText}
             </span>
           </label>
 
           {/* Email Input Field */}
-          <div className="relative">
+          <div className="relative pt-1" suppressHydrationWarning>
             <label htmlFor="newsletter-email" className="sr-only">
               Email Address
             </label>
@@ -152,7 +144,8 @@ export function NewsletterForm() {
               onChange={(e) => setEmail(e.target.value)}
               placeholder={newsletter.placeholder}
               disabled={loading}
-              className="w-full bg-transparent border-b border-neutral-700 py-2.5 text-sm sm:text-base text-white placeholder-neutral-500 focus:border-white focus:outline-none transition-colors"
+              className="w-full bg-transparent border-b border-white/20 py-2 text-[13.3px] text-white placeholder-neutral-500 focus:border-white focus:outline-none transition-colors"
+              suppressHydrationWarning
             />
           </div>
 
@@ -160,7 +153,7 @@ export function NewsletterForm() {
           {errorMessage && (
             <div
               role="alert"
-              className="text-xs text-rose-400 font-medium flex items-center gap-1.5"
+              className="text-[11px] text-rose-400 font-medium flex items-center gap-1.5"
             >
               <span>⚠</span>
               <span>{errorMessage}</span>
@@ -168,11 +161,12 @@ export function NewsletterForm() {
           )}
 
           {/* Submit Button */}
-          <div className="pt-1">
+          <div className="pt-0.5" suppressHydrationWarning>
             <button
               type="submit"
               disabled={loading}
-              className="font-black text-sm tracking-wide text-white uppercase hover:text-[#FF3800] transition-colors disabled:opacity-50 disabled:pointer-events-none cursor-pointer"
+              className="text-[13.5px] font-normal text-white hover:text-[#FF4200] transition-colors disabled:opacity-50 disabled:pointer-events-none cursor-pointer"
+              suppressHydrationWarning
             >
               {loading ? "Submitting..." : newsletter.buttonText}
             </button>

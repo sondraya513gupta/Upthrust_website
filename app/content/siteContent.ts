@@ -213,13 +213,13 @@ export const siteContent: SiteContent = {
       {
         title: "upthrust.agency",
         url: "https://upthrust.agency",
-        description: "Strategy, Brand & Digital Experience",
+        description: "add description here",
         email: "hello@upthrust.agency",
       },
       {
         title: "upthrust.io",
         url: "https://upthrust.io",
-        description: "Engineering, Venture Studio & AI Labs",
+        description: "add description here",
         email: "hello@upthrust.io",
       },
     ],
@@ -231,14 +231,13 @@ export const siteContent: SiteContent = {
       buttonText: "Submit",
       successMessage: "Thank you for subscribing! Your email has been saved.",
     },
-    tagline: "Bold design that performs. Built for ambitious category leaders.",
+    tagline: "Lorem ipsum dolor sit amet consectetur",
     socialLinks: [
-      { label: "Instagram", href: "https://instagram.com" },
-      { label: "LinkedIn", href: "https://linkedin.com" },
+      { label: "Instagram, LinkedIn", href: "https://instagram.com" },
     ],
     legalLinks: [
       { label: "Privacy Policy", href: "#privacy" },
     ],
-    copyright: "© Upthrust Design. All rights reserved.",
+    copyright: "© Upthrust Design",
   },
 };

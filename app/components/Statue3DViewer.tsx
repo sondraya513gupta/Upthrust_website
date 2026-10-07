@@ -71,11 +71,15 @@ export function Statue3DViewer({
   }, []);
 
   return (
-    <div className="relative z-20 flex justify-center items-center w-[270px] sm:w-[350px] md:w-[430px] lg:w-[490px] xl:w-[530px] h-[350px] sm:h-[450px] md:h-[510px] lg:h-[570px] xl:h-[610px] select-none">
+    <div
+      className="relative z-20 flex justify-center items-center w-[270px] sm:w-[350px] md:w-[430px] lg:w-[490px] xl:w-[530px] h-[350px] sm:h-[450px] md:h-[510px] lg:h-[570px] xl:h-[610px] select-none"
+      suppressHydrationWarning
+    >
       
       {/* 3D WebGL GLB Model Viewer */}
       <ModelViewer
         ref={viewerRef}
+        suppressHydrationWarning
         src={modelSrc}
         alt={alt}
         poster={posterSrc}

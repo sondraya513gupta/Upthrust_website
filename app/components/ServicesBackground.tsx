@@ -43,8 +43,8 @@ export function ServicesBackground() {
         })}
 
         {/* Ambient Subtle Glows */}
-        <circle cx="200" cy="300" r="250" fill="#FF3800" fillOpacity="0.06" filter="blur(80px)" />
-        <circle cx="1100" cy="400" r="300" fill="#FF3800" fillOpacity="0.08" filter="blur(90px)" />
+        <circle cx="200" cy="300" r="250" fill="#FF4200" fillOpacity="0.06" filter="blur(80px)" />
+        <circle cx="1100" cy="400" r="300" fill="#FF4200" fillOpacity="0.08" filter="blur(90px)" />
       </svg>
     </div>
   );

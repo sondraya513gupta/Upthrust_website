@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
-import { Syne, Plus_Jakarta_Sans } from "next/font/google";
+import { Inter, Anton } from "next/font/google";
 import "./globals.css";
 import { siteContent } from "./content/siteContent";
 
-const syne = Syne({
-  variable: "--font-syne",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["700", "800"],
+  weight: ["400", "500", "600", "700", "800", "900"],
   display: "swap",
 });
 
-const jakarta = Plus_Jakarta_Sans({
-  variable: "--font-jakarta",
+const anton = Anton({
+  variable: "--font-anton",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: "400",
   display: "swap",
 });
 
@@ -65,14 +65,14 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${syne.variable} ${jakarta.variable} scroll-smooth`}>
+    <html lang="en" className={`${inter.variable} ${anton.variable} scroll-smooth`}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen bg-white text-neutral-900 font-sans antialiased selection:bg-[#FF3800] selection:text-white">
+      <body className="min-h-screen bg-white text-black font-sans antialiased selection:bg-[#FF4200] selection:text-white">
         {children}
       </body>
     </html>

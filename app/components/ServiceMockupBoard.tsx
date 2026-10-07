@@ -6,7 +6,7 @@ export function StrategyMockup() {
       {/* Top Header Bar */}
       <div className="flex items-center justify-between border-b border-neutral-200 pb-2 mb-2">
         <div className="flex items-center gap-1.5">
-          <span className="h-2 w-2 rounded-full bg-[#FF3800]" />
+          <span className="h-2 w-2 rounded-full bg-[#FF4200]" />
           <span className="font-bold text-neutral-900 tracking-tight">Audience Personas &amp; Positioning Matrix</span>
         </div>
         <span className="text-[9px] font-mono text-neutral-400">STAGE-01</span>
@@ -18,7 +18,7 @@ export function StrategyMockup() {
         <div className="col-span-5 flex flex-col gap-1.5">
           <div className="rounded-lg bg-white p-2 border border-neutral-200 shadow-xs flex flex-col gap-1">
             <div className="flex items-center gap-1.5">
-              <div className="h-4 w-4 rounded-full bg-[#FF3800]/20 flex items-center justify-center text-[#FF3800] text-[8px] font-bold">
+              <div className="h-4 w-4 rounded-full bg-[#FF4200]/20 flex items-center justify-center text-[#FF4200] text-[8px] font-bold">
                 P1
               </div>
               <span className="font-bold text-[9px]">The Visionary Founder</span>
@@ -27,7 +27,7 @@ export function StrategyMockup() {
               Needs bold, category-defining identity that accelerates Series A round.
             </p>
             <div className="flex gap-1 mt-0.5">
-              <span className="px-1 py-0.5 rounded bg-orange-50 text-[#FF3800] text-[7px] font-bold">High Growth</span>
+              <span className="px-1 py-0.5 rounded bg-orange-50 text-[#FF4200] text-[7px] font-bold">High Growth</span>
               <span className="px-1 py-0.5 rounded bg-neutral-100 text-neutral-600 text-[7px]">Series A</span>
             </div>
           </div>
@@ -36,7 +36,7 @@ export function StrategyMockup() {
             <span className="font-bold text-[9px] text-neutral-900">Value Proposition Canvas</span>
             <div className="grid grid-cols-2 gap-1 mt-1 text-[7px]">
               <div className="bg-neutral-50 p-1 rounded border border-neutral-100">
-                <span className="font-bold text-[#FF3800] block">Pains</span>
+                <span className="font-bold text-[#FF4200] block">Pains</span>
                 <span>Generic market presence, low retention</span>
               </div>
               <div className="bg-neutral-50 p-1 rounded border border-neutral-100">
@@ -51,13 +51,13 @@ export function StrategyMockup() {
         <div className="col-span-7 flex flex-col gap-1.5">
           <div className="rounded-lg bg-neutral-900 p-2 text-white flex-1 flex flex-col justify-between">
             <div className="flex justify-between items-center text-[8px] text-neutral-400">
-              <span className="font-mono text-[#FF3800]">COMPETITIVE RADAR</span>
+              <span className="font-mono text-[#FF4200]">COMPETITIVE RADAR</span>
               <span>Q3 AUDIT</span>
             </div>
             <div className="flex items-center justify-center py-2">
               <div className="relative w-24 h-24 rounded-full border border-neutral-700 flex items-center justify-center">
                 <div className="w-16 h-16 rounded-full border border-dashed border-neutral-600" />
-                <div className="absolute top-2 right-4 h-2 w-2 rounded-full bg-[#FF3800]" />
+                <div className="absolute top-2 right-4 h-2 w-2 rounded-full bg-[#FF4200]" />
                 <span className="absolute text-[7px] text-neutral-300 font-bold">Upthrust Tier</span>
               </div>
             </div>
@@ -79,7 +79,7 @@ export function IdentityMockup() {
         {/* Photos & Brand Poster */}
         <div className="col-span-6 flex flex-col gap-2 h-full">
           <div className="relative flex-1 rounded-lg bg-gradient-to-tr from-neutral-800 to-neutral-700 p-2 overflow-hidden border border-neutral-700 flex flex-col justify-between">
-            <span className="text-[9px] font-mono tracking-widest text-[#FF3800]">BRAND GUIDELINES</span>
+            <span className="text-[9px] font-mono tracking-widest text-[#FF4200]">BRAND GUIDELINES</span>
             <div className="my-auto text-center">
               <span className="font-display italic text-2xl font-black text-white tracking-tighter">UPTHRUST</span>
               <p className="text-[8px] text-neutral-400 mt-0.5">Visual Identity System v2.4</p>
@@ -92,7 +92,7 @@ export function IdentityMockup() {
 
           {/* Color Palettes */}
           <div className="grid grid-cols-4 gap-1.5 h-10">
-            <div className="rounded bg-[#FF3800] flex items-end p-1 text-[7px] font-mono font-bold text-white">#FF3800</div>
+            <div className="rounded bg-[#FF4200] flex items-end p-1 text-[7px] font-mono font-bold text-white">#FF4200</div>
             <div className="rounded bg-[#0A0A0A] border border-neutral-800 flex items-end p-1 text-[7px] font-mono text-neutral-400">#0A0A0A</div>
             <div className="rounded bg-[#06B6D4] flex items-end p-1 text-[7px] font-mono font-bold text-black">#06B6D4</div>
             <div className="rounded bg-[#A855F7] flex items-end p-1 text-[7px] font-mono font-bold text-white">#A855F7</div>
@@ -104,10 +104,10 @@ export function IdentityMockup() {
           <div className="h-28 rounded-lg bg-neutral-900 p-2.5 border border-neutral-800 flex flex-col justify-between">
             <div className="flex justify-between items-center text-[8px] text-neutral-400 font-mono">
               <span>ICON SYSTEM</span>
-              <span className="text-[#FF3800]">24x24 GRID</span>
+              <span className="text-[#FF4200]">24x24 GRID</span>
             </div>
             <div className="grid grid-cols-4 gap-2 my-auto place-items-center">
-              <div className="h-6 w-6 rounded bg-neutral-800 flex items-center justify-center text-xs text-[#FF3800]">✦</div>
+              <div className="h-6 w-6 rounded bg-neutral-800 flex items-center justify-center text-xs text-[#FF4200]">✦</div>
               <div className="h-6 w-6 rounded bg-neutral-800 flex items-center justify-center text-xs text-white">▲</div>
               <div className="h-6 w-6 rounded bg-neutral-800 flex items-center justify-center text-xs text-neutral-300">●</div>
               <div className="h-6 w-6 rounded bg-neutral-800 flex items-center justify-center text-xs text-emerald-400">■</div>
@@ -117,7 +117,7 @@ export function IdentityMockup() {
 
           {/* Organic brand squiggle mark */}
           <div className="flex-1 rounded-lg bg-neutral-800/80 p-2 border border-neutral-700 flex items-center justify-center relative overflow-hidden">
-            <svg viewBox="0 0 100 40" fill="none" className="w-full h-10 text-[#FF3800]">
+            <svg viewBox="0 0 100 40" fill="none" className="w-full h-10 text-[#FF4200]">
               <path d="M5 20 C25 5, 45 35, 65 15 C85 -5, 95 30, 98 20" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
             </svg>
             <span className="absolute bottom-1 right-2 text-[7px] font-mono text-neutral-400">EXPRESSIVE MARKS</span>
@@ -158,7 +158,7 @@ export function DigitalMockup() {
             </div>
             <div className="rounded-lg bg-neutral-900/90 p-2 border border-neutral-800">
               <span className="text-[8px] text-neutral-400 block">Conversion</span>
-              <span className="text-base font-black text-[#FF3800]">8.42%</span>
+              <span className="text-base font-black text-[#FF4200]">8.42%</span>
               <span className="text-[7px] text-emerald-400 block mt-0.5">↑ +3.2% optimization</span>
             </div>
           </div>
@@ -172,7 +172,7 @@ export function DigitalMockup() {
                   <div
                     style={{ height: `${h}%` }}
                     className={`w-full rounded-t-xs ${
-                      i >= 5 ? "bg-[#FF3800]" : "bg-neutral-700"
+                      i >= 5 ? "bg-[#FF4200]" : "bg-neutral-700"
                     }`}
                   />
                 </div>
@@ -194,7 +194,7 @@ export function DigitalMockup() {
               <div className="h-2 rounded bg-neutral-800 w-full" />
               <div className="h-2 rounded bg-neutral-800 w-4/5" />
             </div>
-            <button className="w-full py-1 rounded bg-[#FF3800] text-white text-[8px] font-bold text-center">
+            <button className="w-full py-1 rounded bg-[#FF4200] text-white text-[8px] font-bold text-center">
               Launch Product
             </button>
           </div>
@@ -212,14 +212,14 @@ export function CampaignMockup() {
         <div className="col-span-7 flex flex-col gap-2 h-full">
           <div className="relative flex-1 rounded-lg bg-neutral-900 border border-neutral-800 overflow-hidden flex flex-col justify-between p-2.5">
             <div className="flex justify-between items-center text-[8px] font-mono text-neutral-400">
-              <span className="text-[#FF3800]">OUT-OF-HOME BILLBOARD</span>
+              <span className="text-[#FF4200]">OUT-OF-HOME BILLBOARD</span>
               <span>NYC / METRO</span>
             </div>
             <div className="my-auto text-left">
               <span className="font-display italic text-xl font-black text-white leading-tight uppercase block">
                 STOP BLENDING IN.
               </span>
-              <span className="font-display italic text-xl font-black text-[#FF3800] leading-tight uppercase block">
+              <span className="font-display italic text-xl font-black text-[#FF4200] leading-tight uppercase block">
                 START WINNING.
               </span>
             </div>
@@ -239,7 +239,7 @@ export function CampaignMockup() {
         <div className="col-span-5 flex flex-col gap-2 h-full">
           <div className="flex-1 rounded-lg bg-neutral-900 border border-neutral-800 p-2 flex flex-col justify-between">
             <span className="text-[8px] font-mono text-neutral-400">PITCH DECK &amp; MOTION</span>
-            <div className="w-full h-14 rounded bg-neutral-800/80 flex items-center justify-center text-[#FF3800]">
+            <div className="w-full h-14 rounded bg-neutral-800/80 flex items-center justify-center text-[#FF4200]">
               <span className="h-7 w-7 rounded-full bg-neutral-900 flex items-center justify-center text-xs">
                 ▶
               </span>
@@ -247,7 +247,7 @@ export function CampaignMockup() {
             <span className="text-[7px] text-neutral-400">4K Kinetic Typography</span>
           </div>
 
-          <div className="h-12 rounded-lg bg-gradient-to-r from-[#FF3800] to-orange-600 p-2 flex items-center justify-between">
+          <div className="h-12 rounded-lg bg-gradient-to-r from-[#FF4200] to-orange-600 p-2 flex items-center justify-between">
             <span className="font-bold text-[9px] text-white">Full-Funnel Creative Sprints</span>
             <span className="text-xs">→</span>
           </div>

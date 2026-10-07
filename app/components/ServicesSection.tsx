@@ -137,7 +137,7 @@ export function ServicesSection() {
                     <ul className="space-y-2 text-xs sm:text-sm text-neutral-300">
                       {service.capabilities.map((item, i) => (
                         <li key={i} className="flex items-start gap-2">
-                          <span className="text-[#FF3800] text-xs mt-0.5 shrink-0">✦</span>
+                          <span className="text-[#FF4200] text-xs mt-0.5 shrink-0">✦</span>
                           <span className="leading-snug">{item}</span>
                         </li>
                       ))}
@@ -147,7 +147,7 @@ export function ServicesSection() {
                     <div className="pt-2">
                       <Link
                         href={service.ctaHref}
-                        className="inline-block bg-white text-[#FF3800] font-black text-xs sm:text-sm uppercase tracking-wider px-7 py-3 rounded-md shadow-lg transition-all duration-200 hover:bg-neutral-100 hover:shadow-xl active:scale-95"
+                        className="inline-block bg-white text-[#FF4200] font-black text-xs sm:text-sm uppercase tracking-wider px-7 py-3 rounded-md shadow-lg transition-all duration-200 hover:bg-neutral-100 hover:shadow-xl active:scale-95"
                       >
                         {service.ctaText}
                       </Link>
@@ -173,7 +173,7 @@ export function ServicesSection() {
               key={i}
               onClick={() => scrollToIndex(i)}
               className={`h-2 rounded-full transition-all duration-300 ${
-                activeCardIndex === i ? "w-8 bg-[#FF3800]" : "w-2 bg-neutral-700 hover:bg-neutral-500"
+                activeCardIndex === i ? "w-8 bg-[#FF4200]" : "w-2 bg-neutral-700 hover:bg-neutral-500"
               }`}
               aria-label={`Go to service ${i + 1}`}
             />
