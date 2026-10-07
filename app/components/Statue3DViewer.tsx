@@ -3,35 +3,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      "model-viewer": React.DetailedHTMLProps<
-        React.HTMLAttributes<HTMLElement> & {
-          src?: string;
-          alt?: string;
-          poster?: string;
-          "auto-rotate"?: boolean | string;
-          "camera-controls"?: boolean | string;
-          "interaction-prompt"?: string;
-          "rotation-per-second"?: string;
-          "shadow-intensity"?: string;
-          "shadow-softness"?: string;
-          "camera-orbit"?: string;
-          "field-of-view"?: string;
-          "min-camera-orbit"?: string;
-          "max-camera-orbit"?: string;
-          "environment-image"?: string;
-          "tone-mapping"?: string;
-          exposure?: string;
-          loading?: "auto" | "lazy" | "eager";
-          reveal?: "auto" | "interaction" | "manual";
-        },
-        HTMLElement
-      >;
-    }
-  }
-}
+// Use standard React custom-element type casting to guarantee 100% TypeScript compilation in React 19 & Turbopack
+const ModelViewer = "model-viewer" as React.ElementType;
 
 interface Statue3DViewerProps {
   modelSrc?: string;
@@ -80,13 +53,13 @@ export function Statue3DViewer({
       try {
         if (viewer.model && viewer.model.materials && viewer.model.materials.length > 0) {
           const mat = viewer.model.materials[0];
-          // Tint base color to rich deep midnight indigo (#0c1328)
+          // Deepen midnight obsidian base color so reflections maintain contrast
           mat.pbrMetallicRoughness.setBaseColorFactor([0.08, 0.12, 0.28, 1.0]);
           mat.pbrMetallicRoughness.setMetallicFactor(0.92);
           mat.pbrMetallicRoughness.setRoughnessFactor(0.12);
         }
       } catch (e) {
-        console.warn("Could not tune material dynamically:", e);
+        console.warn("Material tuning notice:", e);
       }
       setModelReady(true);
     };
@@ -100,16 +73,15 @@ export function Statue3DViewer({
   return (
     <div className="relative z-20 flex justify-center items-center w-[270px] sm:w-[350px] md:w-[430px] lg:w-[490px] xl:w-[530px] h-[350px] sm:h-[450px] md:h-[510px] lg:h-[570px] xl:h-[610px] select-none">
       
-      {/* 3D WebGL GLB Model with Iridescent Studio Environment Mapping */}
-      <model-viewer
+      {/* 3D WebGL GLB Model Viewer */}
+      <ModelViewer
         ref={viewerRef}
         src={modelSrc}
         alt={alt}
         poster={posterSrc}
-        environment-image="/iridescent_env.png"
-        auto-rotate
+        auto-rotate=""
         rotation-per-second="10deg"
-        camera-controls
+        camera-controls=""
         interaction-prompt="none"
         shadow-intensity="1.3"
         shadow-softness="0.7"
@@ -139,13 +111,11 @@ export function Statue3DViewer({
             width={530}
             height={610}
             priority
+            style={{ width: "100%", height: "auto" }}
             className="h-auto w-full object-contain pointer-events-none drop-shadow-[0_20px_40px_rgba(0,0,0,0.18)]"
-            style={{
-              filter: "contrast(1.18) saturate(1.32) brightness(1.02)",
-            }}
           />
         </div>
-      </model-viewer>
+      </ModelViewer>
 
       {/* Interactive 3D Status Badge */}
       <div className="pointer-events-none absolute bottom-2 left-1/2 -translate-x-1/2 rounded-full bg-white/85 border border-black/[0.08] backdrop-blur-md px-3 py-1 text-[10px] font-mono text-neutral-700 uppercase tracking-widest opacity-80 shadow-xs">

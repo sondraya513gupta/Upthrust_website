@@ -46,6 +46,7 @@ export interface SiteContent {
     };
     bustImage: {
       src: string;
+      modelSrc?: string;
       alt: string;
       width: number;
       height: number;
@@ -117,6 +118,7 @@ export const siteContent: SiteContent = {
     },
     bustImage: {
       src: "/pic2.png",
+      modelSrc: "/statue.glb",
       alt: "Upthrust iridescent neoclassical Venus bust",
       width: 600,
       height: 750,

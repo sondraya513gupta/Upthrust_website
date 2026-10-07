@@ -75,6 +75,7 @@ export function FooterSection() {
                 alt="Upthrust brand petal symbol"
                 width={88}
                 height={88}
+                style={{ width: "100%", height: "auto" }}
                 className="w-full h-auto object-contain"
               />
             </div>
