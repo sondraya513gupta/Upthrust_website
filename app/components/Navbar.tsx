@@ -1,13 +1,16 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Link from "next/link";
 import { siteContent } from "../content/siteContent";
 
 export function Navbar() {
-  const { brandName, contactButtonText, contactHref } = siteContent.navigation;
+  const { brandName } = siteContent.navigation;
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="relative z-30 w-full border-b border-black/[0.08] bg-white/90 backdrop-blur-sm">
-      <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4 sm:px-10 lg:px-16">
+    <header className="relative z-30 w-full border-b border-black/[0.08] bg-white/95 backdrop-blur-sm">
+      <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between px-6 py-4 sm:px-10 lg:px-16">
         {/* Brand Logo */}
         <Link
           href="/"
@@ -36,15 +39,57 @@ export function Navbar() {
           </span>
         </Link>
 
-        {/* CTA Contact Button */}
-        <Link
-          href={contactHref}
-          className="group relative inline-flex items-center justify-center font-black tracking-wider text-[#FF3800] text-sm sm:text-base uppercase transition-all duration-200 hover:text-[#d93000] hover:tracking-widest focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FF3800]"
+        {/* Right Hamburger Menu Icon (3 Orange Rounded Bars) */}
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="group flex flex-col items-end justify-center gap-1.5 w-8 h-8 cursor-pointer focus:outline-none"
+          aria-label="Toggle navigation menu"
+          aria-expanded={menuOpen}
         >
-          <span>{contactButtonText}</span>
-          <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-[#FF3800] transition-all duration-300 group-hover:w-full" />
-        </Link>
+          <span
+            className={`h-[3.5px] w-7 rounded-full bg-[#FF3800] transition-all duration-300 ${
+              menuOpen ? "w-7 rotate-45 translate-y-[8px]" : ""
+            }`}
+          />
+          <span
+            className={`h-[3.5px] w-7 rounded-full bg-[#FF3800] transition-all duration-300 ${
+              menuOpen ? "opacity-0" : ""
+            }`}
+          />
+          <span
+            className={`h-[3.5px] w-7 rounded-full bg-[#FF3800] transition-all duration-300 ${
+              menuOpen ? "w-7 -rotate-45 -translate-y-[8px]" : ""
+            }`}
+          />
+        </button>
       </div>
+
+      {/* Slide-down Mobile/Desktop Menu Drawer */}
+      {menuOpen && (
+        <div className="absolute top-full left-0 w-full bg-neutral-950 text-white border-b border-neutral-800 py-6 px-8 z-40 animate-in fade-in slide-in-from-top-2 duration-200">
+          <div className="max-w-[1440px] mx-auto flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+            <nav className="flex flex-col sm:flex-row gap-6 font-display italic text-lg sm:text-xl">
+              <Link
+                href="#services"
+                onClick={() => setMenuOpen(false)}
+                className="hover:text-[#FF3800] transition-colors"
+              >
+                SERVICES
+              </Link>
+              <Link
+                href="#contact"
+                onClick={() => setMenuOpen(false)}
+                className="hover:text-[#FF3800] transition-colors"
+              >
+                CONTACT &amp; NEWSLETTER
+              </Link>
+            </nav>
+            <div className="text-xs font-mono text-neutral-400">
+              UPTHRUST DESIGN STUDIO • BOLD DESIGN THAT PERFORMS
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
