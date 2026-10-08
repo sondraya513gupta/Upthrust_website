@@ -9,9 +9,11 @@ export interface ServiceItem {
   title: string;
   description: string;
   capabilities: string[];
+  subNote?: string;
   ctaText: string;
   ctaHref: string;
   visualType: "strategy" | "identity" | "digital" | "campaign";
+  mockupImage: string;
 }
 
 export interface SiteContent {
@@ -154,6 +156,7 @@ export const siteContent: SiteContent = {
         ctaText: "CONTACT",
         ctaHref: "#contact",
         visualType: "strategy",
+        mockupImage: "/service-mockup-1.jpg",
       },
       {
         id: "brand-identity",
@@ -170,6 +173,7 @@ export const siteContent: SiteContent = {
         ctaText: "CONTACT",
         ctaHref: "#contact",
         visualType: "identity",
+        mockupImage: "/service-mockup-2.png",
       },
       {
         id: "product-digital",
@@ -186,6 +190,7 @@ export const siteContent: SiteContent = {
         ctaText: "CONTACT",
         ctaHref: "#contact",
         visualType: "digital",
+        mockupImage: "/service-mockup-3.png",
       },
       {
         id: "creative-campaign",
@@ -197,11 +202,12 @@ export const siteContent: SiteContent = {
           "Campaign creative & social content",
           "Presentations & pitch decks",
           "Marketing collateral & ad creative",
-          "Spatial & physical experiences (exhibitions, placemaking & branded environments)",
         ],
+        subNote: "Spatial & physical experiences (exhibitions, placemaking & branded environments)",
         ctaText: "CONTACT",
         ctaHref: "#contact",
         visualType: "campaign",
+        mockupImage: "/service-mockup-4.png",
       },
     ],
   },
