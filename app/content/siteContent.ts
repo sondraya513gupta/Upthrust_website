@@ -15,6 +15,7 @@ export interface ServiceItem {
   imageSrc: string;
 }
 
+
 export interface SiteContent {
   meta: {
     title: string;
@@ -84,11 +85,12 @@ export interface SiteContent {
     legalLinks: Array<{ label: string; href: string }>;
     copyright: string;
   };
+
 }
 
 export const siteContent: SiteContent = {
   meta: {
-    title: "Upthrust — Bold Design That Performs",
+    title: "Upthrust — BOLD DESIGN That Performs",
     description:
       "Upthrust is a strategic design and digital experience agency crafting identities, digital products, and motion that drive high-impact business growth.",
     canonicalUrl: "https://upthrust.agency",
@@ -157,6 +159,7 @@ export const siteContent: SiteContent = {
         visualType: "strategy",
         imageSrc: "/pasted_svg_5_render.png",
       },
+
       {
         id: "brand-identity",
         kicker: "WHAT CAN WE DO FOR YOU",

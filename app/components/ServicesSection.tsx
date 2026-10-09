@@ -31,12 +31,18 @@ export function ServicesSection() {
     };
 
     const onWheel = (event: WheelEvent) => {
+      // Only hijack vertical scroll for horizontal slide movement if the user explicitly horizontally scrolls,
+      // or if scrolling vertically inside the track before hitting boundaries with generous tolerance.
       if (Math.abs(event.deltaY) < Math.abs(event.deltaX)) return;
-      const maxScroll = container.scrollWidth - container.clientWidth;
-      const atStart = container.scrollLeft <= 1;
-      const atEnd = container.scrollLeft >= maxScroll - 1;
 
-      if ((event.deltaY > 0 && atEnd) || (event.deltaY < 0 && atStart)) return;
+      const maxScroll = container.scrollWidth - container.clientWidth;
+      const atStart = container.scrollLeft <= 5;
+      const atEnd = container.scrollLeft >= maxScroll - 5;
+
+      // Allow natural vertical page scroll to continue to the footer or hero when at boundaries
+      if ((event.deltaY > 0 && atEnd) || (event.deltaY < 0 && atStart)) {
+        return;
+      }
 
       event.preventDefault();
       container.scrollLeft += event.deltaY;
@@ -49,6 +55,7 @@ export function ServicesSection() {
       container.removeEventListener("wheel", onWheel);
     };
   }, [maxIndex]);
+
 
   return (
     <section
@@ -163,9 +170,8 @@ export function ServicesSection() {
             type="button"
             onClick={() => scrollToIndex(idx)}
             aria-label={`Go to ${item.title}`}
-            className={`pointer-events-auto h-1.5 rounded-full transition-all ${
-              activeIndex === idx ? "w-7 bg-[#FF4200]" : "w-2 bg-white/30 hover:bg-white/60"
-            }`}
+            className={`pointer-events-auto h-1.5 rounded-full transition-all ${activeIndex === idx ? "w-7 bg-[#FF4200]" : "w-2 bg-white/30 hover:bg-white/60"
+              }`}
           />
         ))}
       </div>
