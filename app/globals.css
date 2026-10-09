@@ -7,11 +7,15 @@
   --brand-black: #000000;
 }
 
+html {
+  overflow-x: clip;
+}
+
 body {
   background-color: #ffffff;
   color: #000000;
   font-family: var(--font-inter), sans-serif;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .font-sans {

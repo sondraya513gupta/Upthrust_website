@@ -1,27 +1,22 @@
 import { Navbar } from "./components/Navbar";
 import { HeroSection } from "./components/HeroSection";
+import { HeroGridBackground } from "./components/HeroGridBackground";
 import { SocialProofBar } from "./components/SocialProofBar";
 import { ServicesSection } from "./components/ServicesSection";
 import { FooterSection } from "./components/FooterSection";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col bg-white text-neutral-900 overflow-x-hidden">
-      {/* Top Header */}
-      <Navbar />
-
-      {/* Main Page Flow */}
-      <main className="flex flex-1 flex-col justify-between">
-        {/* Section 1: Hero Section */}
+    <div className="bg-white text-neutral-900">
+      <div className="relative flex min-h-screen flex-col">
+        <HeroGridBackground />
+        <Navbar />
         <HeroSection />
-
-        {/* Section 1 Bottom: Brand Logos Bar */}
         <SocialProofBar />
+      </div>
 
-        {/* Section 2: Services Showcase with Continuous 3D Pipe */}
+      <main className="block w-full">
         <ServicesSection />
-
-        {/* Section 3: Footer, Brand Signature & Functional Newsletter Form */}
         <FooterSection />
       </main>
     </div>

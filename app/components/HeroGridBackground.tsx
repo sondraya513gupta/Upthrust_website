@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export function HeroGridBackground() {
   return (
-    <div className="pointer-events-none absolute inset-0 overflow-hidden select-none z-0">
+    <div className="pointer-events-none absolute inset-0 select-none z-[1]">
       {/* 1. Structural Architectural Grid Pattern with Crosshairs (+) */}
       <svg
         className="absolute inset-0 h-full w-full"
@@ -42,7 +42,7 @@ export function HeroGridBackground() {
       </svg>
 
       {/* 2. Exact Vector Blueprint CAD Drawing from Figma (Figma Layer: Vector 863.15px x 640.5px) */}
-      <div className="absolute right-[-60px] sm:right-[-20px] lg:right-0 bottom-[-40px] sm:bottom-[-20px] lg:bottom-0 w-[480px] sm:w-[650px] lg:w-[863px] h-auto opacity-[0.22] transition-opacity duration-500 hover:opacity-30">
+      <div className="absolute right-0 bottom-0 w-[400px] sm:w-[580px] lg:w-[780px] xl:w-[860px] h-auto opacity-[0.32] transition-opacity duration-500 hover:opacity-[0.42]">
         <Image
           src="/blueprint-cad.svg"
           alt=""
